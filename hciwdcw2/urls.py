@@ -15,12 +15,19 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from hciwdcw2 import settings
 
+# Custom 404
+# refer: https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317
+handler404 = "shop.views.page_not_found_view"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("__reload__/", include("django_browser_reload.urls")),
+    path('', include('shop.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
