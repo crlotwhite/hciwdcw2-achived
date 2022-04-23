@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2fy1*4^w&0h%a^id96pe6%!j)@&gk(0%7**d#^8tb-++(fro7q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,9 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'management.apps.ManagementConfig',
-    'tailwind',
-    'theme',
-    'django_browser_reload',
     'ckeditor',
 ]
 
@@ -133,13 +130,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = path.join(BASE_DIR, 'media')
-
-# tailwind settings
-TAILWIND_APP_NAME = 'theme'
-
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
 
 # ckeditor settings
 CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
