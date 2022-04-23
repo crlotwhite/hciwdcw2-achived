@@ -3,7 +3,22 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Store(models.Model):
+    """
+    This is NEWS Model.
+    Actually it is not used directly.
+    It is used as abstract model.
+
+    [Schema]
+    News
+    ID | LOGO | NAME | STORE_TYPE | LOCATION | CONTACT | OPENING | DESCRIPTION
+
+    """
+
     class StoreType(models.TextChoices):
+        """
+        This is StoreType class.
+        It will be used as TextChoices for ChoiceFiled like Enum.
+        """
         BANK = 'BNK', _('Bank')
         BEAUTY = 'BUT', _('Beauty')
         ELECTRICAL = 'ECT', _('Electrical')

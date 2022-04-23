@@ -1,4 +1,13 @@
 def create_backup():
+    """
+    This is utility function for creating backup file.
+    It run shell script directly for using tar.
+    Also, it added a model for admin page.
+
+    Returns:
+        (BOOL): result
+
+    """
     import shutil, subprocess, datetime
 
     from os import path, listdir, remove

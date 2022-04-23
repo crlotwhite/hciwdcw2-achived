@@ -3,8 +3,15 @@ from datetime import datetime as dtime, date, time
 import datetime
 from .models.event import Event
 
-# refer: https://alexpnt.github.io/2017/07/15/django-calendar/
+
 class EventCalendar(HTMLCalendar):
+    """
+    It is EventCalendar class for customizing some actions.
+    This inherits HTMLCalendar class.
+
+    This code is refered from "https://alexpnt.github.io/2017/07/15/django-calendar/"
+    """
+
     def __init__(self, events=None):
         super(EventCalendar, self).__init__()
         self.events = events
@@ -14,9 +21,15 @@ class EventCalendar(HTMLCalendar):
         Return a day as a table cell.
         """
         events_from_day = events.filter(event_start__day=day)
+        events_until_day = events.filter(event_end__day=day)
+
         events_html = "<ul>"
         for event in events_from_day:
             events_html += event.get_absolute_url() + "<br>"
+
+        for event in events_until_day:
+            events_html += event.get_absolute_url(isUntil=True) + "<br>"
+
         events_html += "</ul>"
 
         if day == 0:
@@ -36,7 +49,7 @@ class EventCalendar(HTMLCalendar):
         Return a formatted month as a table.
         """
 
-        events = Event.objects.filter(event_start__month=themonth)
+        events = Event.objects.filter(event_start__month=themonth, event_end__month=themonth)
 
         v = []
         a = v.append
