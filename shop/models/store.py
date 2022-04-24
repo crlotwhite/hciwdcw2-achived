@@ -26,7 +26,7 @@ class Store(models.Model):
         FASHION = 'FSH', _('Fashion')
         FOOD = 'FOD', _('Food')
         FURNITURE = 'FUN', _('Furniture')
-        JEWELLERY = 'JEW', _('JEWELLERY')
+        JEWELLERY = 'JEW', _('Jewellery')
         SERVICES = 'SVC', _('Services')
         SPORTS = 'SPT', _('Sport')
         TOY = 'TOY', _('Toy')

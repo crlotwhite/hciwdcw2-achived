@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>Causeway Point - Events</title>{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Events</h1>
+        <br><hr><br>
+        <div class="posts-container">
+            <article id="" class="events-listing">
+                <h4>Apple</h4>
+                <a class="events-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-apple.jpg' %}" alt="" />
+                </div>
+                <div class="events-contents">
+                    <h3>01.Apr-02.May</h3>
+                    <h2>Apple - New Products are out!</h2>
+                </div>
+            </article>
+            <article id="" class="events-listing">
+                <h4>Bose</h4>
+                <a class="events-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-bose.jpg' %}" alt="" />
+                </div>
+                <div class="events-contents">
+                    <h3>01.Apr-02.May</h3>
+                    <h2>For your comfortable life with Bose sounds</h2>
+                </div>
+            </article>
+            <article id="" class="events-listing">
+                <h4>Boss</h4>
+                <a class="events-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-boss.jpg' %}" alt="" />
+                </div>
+                <div class="events-contents">
+                    <h3>01.Apr-02.May</h3>
+                    <h2>Change your fashion!</h2>
+                </div>
+            </article>
+            <article id="" class="events-listing">
+                <h4>Canon</h4>
+                <a class="events-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-canon.jpg' %}" alt="" />
+                </div>
+                <div class="events-contents">
+                    <h3>01.Apr-02.May</h3>
+                    <h2>Chance of change new camera from old camera</h2>
+                </div>
+            </article>
+            <article id="" class="events-listing">
+                <h4>H&M</h4>
+                <a class="events-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-hnm.jpg' %}" alt="" />
+                </div>
+                <div class="events-contents">
+                    <h3>01.Apr-02.May</h3>
+                    <h2>Discount on 7 new clothes!</h2>
+                </div>
+            </article>
+            <article id="" class="events-listing">
+                <h4>UNIQLO</h4>
+                <a class="events-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-uniqlo.jpg' %}" alt="" />
+                </div>
+                <div class="events-contents">
+                    <h3>01.Apr-02.May</h3>
+                    <h2>The biggest event for customers on their birthday!</h2>
+                </div>
+            </article>
+        </div>
+        <br>
+        <div class="posts-opt">
+            <div class="posts-opt-left">
+                <a href="#" class="posts-opt-prev">Prev</a>
+                <a href="#" class="posts-opt-num">1</a>
+                <a href="#" class="posts-opt-num">2</a>
+                <a href="#" class="posts-opt-num">3</a>
+                <a href="#" class="posts-opt-num">4</a>
+                <a href="#" class="posts-opt-next">Next</a>
+            </div>
+            <div class="posts-opt-center"><br></div>
+            <div class="posts-opt-right">
+                <select>
+                    <option>All</option>
+                    <option>Ongoing</option>
+                    <option>Archived</option>
+                </select>
+            </div>
+        </div>
+    </div>
+{% endblock %}

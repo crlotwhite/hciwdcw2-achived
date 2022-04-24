@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>Causeway Point - Newsroom</title>{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Newsroom</h1>
+        <br><hr><br>
+        <div class="posts-container">
+            <article id="" class="news-listing">
+                <h4>Life</h4>
+                <a class="news-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-apple.jpg' %}" alt="" />
+                </div>
+                <div class="news-contents">
+                    <h3>01.Apr.2022</h3>
+                    <h2>Apple - New Products are out!</h2>
+                </div>
+            </article>
+            <article id="" class="news-listing">
+                <h4>Life</h4>
+                <a class="news-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-bose.jpg' %}" alt="" />
+                </div>
+                <div class="news-contents">
+                    <h3>01.Apr.2022</h3>
+                    <h2>For your comfortable life with Bose sounds</h2>
+                </div>
+            </article>
+            <article id="" class="news-listing">
+                <h4>Announce</h4>
+                <a class="news-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-boss.jpg' %}" alt="" />
+                </div>
+                <div class="news-contents">
+                    <h3>01.Apr.2022</h3>
+                    <h2>Change your fashion!</h2>
+                </div>
+            </article>
+            <article id="" class="news-listing">
+                <h4>Style</h4>
+                <a class="news-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-canon.jpg' %}" alt="" />
+                </div>
+                <div class="news-contents">
+                    <h3>01.Apr.2022</h3>
+                    <h2>Chance of change new camera from old camera</h2>
+                </div>
+            </article>
+            <article id="" class="news-listing">
+                <h4>Delish</h4>
+                <a class="news-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-hnm.jpg' %}" alt="" />
+                </div>
+                <div class="news-contents">
+                    <h3>01.Apr.2022</h3>
+                    <h2>Discount on 7 new clothes!</h2>
+                </div>
+            </article>
+            <article id="" class="news-listing">
+                <h4>Store</h4>
+                <a class="news-read-more" href="./index.html">Read more</a>
+                <div class="posts-image">
+                    <img src="{% static 'img/stores-uniqlo.jpg' %}" alt="" />
+                </div>
+                <div class="news-contents">
+                    <h3>01.Apr.2022</h3>
+                    <h2>The biggest event for customers on their birthday!</h2>
+                </div>
+            </article>
+        </div>
+        <br>
+        <div class="posts-opt">
+            <div class="posts-opt-left">
+                <a href="#" class="posts-opt-prev">Prev</a>
+                <a href="#" class="posts-opt-num">1</a>
+                <a href="#" class="posts-opt-num">2</a>
+                <a href="#" class="posts-opt-num">3</a>
+                <a href="#" class="posts-opt-num">4</a>
+                <a href="#" class="posts-opt-next">Next</a>
+            </div>
+            <div class="posts-opt-center"><br></div>
+            <div class="posts-opt-right">
+                <select>
+                    <option>All</option>
+                    <option>Announce</option>
+                    <option>Delish</option>
+                    <option>Life</option>
+                    <option>Style</option>
+                </select>
+            </div>
+        </div>
+    </div>
+{% endblock %}

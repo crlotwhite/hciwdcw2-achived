@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>Causeway Point - Stores</title>{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Stores</h1>
+        <br><hr><br>
+        <div class="stores-container">
+            <article id="" class="stores-listing">
+                <a class="stores-title" href="./index.html">Apple</a>
+                <div class="stores-image">
+                    <img src="{% static 'img/stores-apple.jpg' %}" alt="" />
+                </div>
+            </article>
+            <article id="" class="stores-listing">
+                <a class="stores-title" href="#">Bose</a>
+                <div class="stores-image">
+                    <img src="{% static 'img/stores-bose.jpg' %}" alt="" />
+                </div>
+            </article>
+            <article id="" class="stores-listing">
+                <a class="stores-title" href="#">Boss</a>
+                <div class="stores-image">
+                    <img src="{% static 'img/stores-boss.jpg' %}" alt="" />
+                </div>
+            </article>
+            <article id="" class="stores-listing">
+                <a class="stores-title" href="#">canon</a>
+                <div class="stores-image">
+                    <img src="{% static 'img/stores-canon.jpg' %}" alt="" />
+                </div>
+            </article>
+            <article id="" class="stores-listing">
+                <a class="stores-title" href="#">H&M</a>
+                <div class="stores-image">
+                    <img src="{% static 'img/stores-hnm.jpg' %}" alt="" />
+                </div>
+            </article>
+            <article id="" class="stores-listing">
+                <a class="stores-title" href="#">UNIQLO</a>
+                <div class="stores-image">
+                    <img src="{% static 'img/stores-uniqlo.jpg' %}" alt="" />
+                </div>
+            </article>
+        </div>
+        <br>
+        <div class="posts-opt">
+            <div class="posts-opt-left">
+                <a href="#" class="posts-opt-prev">Prev</a>
+                <a href="#" class="posts-opt-num">1</a>
+                <a href="#" class="posts-opt-num">2</a>
+                <a href="#" class="posts-opt-num">3</a>
+                <a href="#" class="posts-opt-num">4</a>
+                <a href="#" class="posts-opt-next">Next</a>
+            </div>
+            <div class="posts-opt-center"><br></div>
+            <div class="posts-opt-right">
+                <div class="stores-select">
+                    <select>
+                        <option>Category</option>
+                        <option>A</option>
+                    </select>
+                    <select>
+                        <option>A-Z</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>F</option>
+                        <option>G</option>
+                        <option>H</option>
+                        <option>I</option>
+                        <option>J</option>
+                        <option>K</option>
+                        <option>L</option>
+                        <option>M</option>
+                        <option>N</option>
+                        <option>O</option>
+                        <option>P</option>
+                        <option>Q</option>
+                        <option>R</option>
+                        <option>S</option>
+                        <option>T</option>
+                        <option>U</option>
+                        <option>V</option>
+                        <option>W</option>
+                        <option>X</option>
+                        <option>Y</option>
+                        <option>Z</option>
+                        <option>#</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <div class="input-holder">
+                    <input type="text" class="search-input" placeholder="Type to search" />
+                    <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                </div>
+                <span class="close" onclick="searchToggle(this, event);"></span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
