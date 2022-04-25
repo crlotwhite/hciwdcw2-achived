@@ -16,7 +16,7 @@ class News(models.Model):
     ID | FEATURED_IMAGE | TITLE | POSTER | CONTENT | PUBLISHED_BY
 
     """
-    featured_image = models.ImageField(upload_to='img', help_text='Image to show in list')
+    featured_image = models.ImageField(upload_to='img', help_text='Image to show in list', blank=True, null=True)
     title = models.CharField(max_length=256, help_text='News title e.g. Deal title or Update title')
     poster = models.ImageField(upload_to='img', help_text='Image to show in content page')
     content = models.TextField(help_text='News Contents')
@@ -39,6 +39,9 @@ class Deal(News):
     """
     related_store_id = models.ForeignKey(Store, on_delete=models.DO_NOTHING, help_text='Event Store')
     event = models.ForeignKey(Event, on_delete=models.CASCADE, help_text='Event Schedule')
+
+    def get_format_datetime(self):
+        return self.published_by.strftime('%d.%b.%Y')
 
 
 class Announce(News):

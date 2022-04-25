@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}<title>Causeway Point - [##_events_article_title_##]</title>{% endblock %}
+{% block title %}<title>Causeway Point - {{ deal.title }}</title>{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -9,32 +9,17 @@
             <div class="events-breadcrumb">
                 <span>EVENTS</span>
             </div>
-            <h1>Apple - New products are out!</h1><br><br>
-            <h4>01.Apr-02.May</h4><br>
-            <h5>Apple</h5>
+            <h1>{{ deal.title }}</h1><br><br>
+            <h4>{{ deal.event.get_duration_str }}</h4><br>
+            <h5>{{ deal.related_store_id.name }}</h5>
         </div>
         <div class="events_article-img">
-            <img src="{% static 'img/image1.jpg' %}" alt="" />
+            <img src="{{ deal.poster.url }}" alt="poster image" />
         </div>
         <div class="posts_article-wrapper">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis urna at lacus eleifend eleifend a eget libero. Nunc porttitor lorem eget enim finibus consequat. Donec a cursus augue. Donec eleifend sapien risus, eu venenatis ex faucibus id. In rhoncus at massa in vulputate. Mauris eu suscipit ante. Proin nec diam in mi varius sagittis non at tortor. Donec euismod tincidunt sem eget semper. Nunc non dolor eget orci tempus molestie nec eget odio.
-            </p>
-            <h2>Sub Title A</h2>
-            <h3>Sub Title B</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis urna at lacus eleifend eleifend a eget libero. Nunc porttitor lorem eget enim finibus consequat. Donec a cursus augue. Donec eleifend sapien risus, eu venenatis ex faucibus id. In rhoncus at massa in vulputate. Mauris eu suscipit ante. Proin nec diam in mi varius sagittis non at tortor. Donec euismod tincidunt sem eget semper. Nunc non dolor eget orci tempus molestie nec eget odio.
-                <br>
-                Praesent tincidunt vel ligula nec feugiat. Nullam sollicitudin ac velit vel pellentesque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce vitae eleifend tortor. Pellentesque interdum, odio ut varius interdum, justo tortor posuere leo, in pretium nunc odio non diam. Donec non ex nibh. Duis sed semper orci. Donec posuere eros dui, eget blandit dui gravida sit amet. Nam venenatis, est sit amet malesuada ornare, enim leo molestie mi, ac congue quam nunc eget nulla. Praesent elementum egestas mauris. Aliquam rutrum tristique dolor, eu finibus ante condimentum quis. Nullam facilisis, turpis ac venenatis imperdiet, mauris quam gravida libero, ac semper purus turpis et massa. Cras vitae varius risus, ut consequat odio. Nullam felis eros, egestas quis pharetra nec, pellentesque nec sapien.
-            </p>
-            <img src="{% static 'img/image9.jpg' %}" alt="" />
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis urna at lacus eleifend eleifend a eget libero. Nunc porttitor lorem eget enim finibus consequat. Donec a cursus augue. Donec eleifend sapien risus, eu venenatis ex faucibus id. In rhoncus at massa in vulputate. Mauris eu suscipit ante. Proin nec diam in mi varius sagittis non at tortor. Donec euismod tincidunt sem eget semper. Nunc non dolor eget orci tempus molestie nec eget odio.
-                <br>
-                Praesent tincidunt vel ligula nec feugiat. Nullam sollicitudin ac velit vel pellentesque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce vitae eleifend tortor. Pellentesque interdum, odio ut varius interdum, justo tortor posuere leo, in pretium nunc odio non diam. Donec non ex nibh. Duis sed semper orci. Donec posuere eros dui, eget blandit dui gravida sit amet. Nam venenatis, est sit amet malesuada ornare, enim leo molestie mi, ac congue quam nunc eget nulla. Praesent elementum egestas mauris. Aliquam rutrum tristique dolor, eu finibus ante condimentum quis. Nullam facilisis, turpis ac venenatis imperdiet, mauris quam gravida libero, ac semper purus turpis et massa. Cras vitae varius risus, ut consequat odio. Nullam felis eros, egestas quis pharetra nec, pellentesque nec sapien.
-            </p>
-            <h4>20.Apr.2020</h4>
-            <h5>Categort</h5>
+            {{ deal.content }}
+            <h4>{{ deal.get_format_datetime }}</h4>
+{#            <h5>Categort</h5>#}
             <button>
                 <a onclick="history.back()">Go back</a>
             </button>

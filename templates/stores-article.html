@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}<title>Causeway Point - [##_store_title_##]</title>{% endblock %}
+{% block title %}<title>Causeway Point - {{ store.name }}</title>{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="stores_article-img">
-            <img src="{% static 'img/stores-apple.jpg' %}" alt="" />
+            <img src="{{ store.logo.url }}" alt="store logo image" />
         </div>
         <div class="stores_article-wrapper">
             <h3 class="stores-breadcrumb">STORE</h3>
-            <h1>Apple</h1><br>
+            <h1>{{ store.name }}</h1><br>
             <div class="stores_article-contact">
                 <div class="stores_article-contact-left">
                     <h4>Location</h4>
-                    <p>1 Woodlands Square Singapore 738099</p>
+                    <p>{{ store.location }}</p>
                 </div>
                 <div class="stores_article-contact-center">
                     <h4>Contact</h4>
-                    <p>(65) 6894 2237<br>(65) 6894 2238</p>
+                    <p>{{ store.contact }}</p>
                 </div>
                 <div class="stores_article-contact-right">
                     <h4>Open</h4>
-                    <p>M-F 10.30am to 10.30pm<br>S-S 09.30am to 11.00pm</p>
+                    <p>{{ store.opening }}</p>
                 </div>
             </div>
             <br>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis urna at lacus eleifend eleifend a eget libero. Nunc porttitor lorem eget enim finibus consequat. Donec a cursus augue. Donec eleifend sapien risus, eu venenatis ex faucibus id. In rhoncus at massa in vulputate. Mauris eu suscipit ante. Proin nec diam in mi varius sagittis non at tortor. Donec euismod tincidunt sem eget semper. Nunc non dolor eget orci tempus molestie nec eget odio.
+                {{ store.description }}
             </p>
             <button>
                 <a onclick="history.back()">Go back</a>

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Q
 from django.views.generic import (
     ListView,
     DetailView,
@@ -63,15 +64,43 @@ def contact_view(request):
 
 class StoreListView(ListView):
     model = Store
-    paginate_by = 9
+    paginate_by = 12
     template_name = 'stores.html'
     context_object_name = 'stores'
+
+    def get_queryset(self):
+        q_expr = Q()
+        if self.request.GET.get('alpha') is not None:
+            if self.request.GET['alpha'].isdigit():
+                if self.request.GET['alpha'] == '0':
+                    q_expr = q_expr & Q(name__regex=r'^\d')
+            else:
+                q_expr = q_expr & Q(name__istartswith=self.request.GET['alpha'])
+
+        if self.request.GET.get('category') is not None:
+            q_expr = q_expr & Q(store_type=self.request.GET['category'])
+
+        if self.request.GET.get('q') is not None:
+            q_expr = q_expr & Q(name__contains=self.request.GET['q'])
+
+        return Store.objects.filter(q_expr).order_by('name')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['request'] = self.request
+        context['current_page'] = 2
+        return context
 
 
 class StoreDetailView(DetailView):
     model = Store
-    template_name = ''
+    template_name = 'stores-article.html'
     context_object_name = 'store'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_page'] = 2
+        return context
 
 
 class DealListView(ListView):
@@ -80,11 +109,25 @@ class DealListView(ListView):
     template_name = 'events.html'
     context_object_name = 'deals'
 
+    def get_queryset(self):
+        return Deal.objects.order_by('-published_by')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['request'] = self.request
+        context['current_page'] = 3
+        return context
+
 
 class DealDetailView(DetailView):
     model = Deal
-    template_name = ''
+    template_name = 'events-article.html'
     context_object_name = 'deal'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_page'] = 3
+        return context
 
 
 class NewsRoomListView(ListView):
@@ -93,8 +136,26 @@ class NewsRoomListView(ListView):
     template_name = 'news.html'
     context_object_name = 'articles'
 
+    def get_queryset(self):
+        q_expr = Q()
+        if self.request.GET.get('category') is not None:
+            q_expr = Q(article_type=self.request.GET['category'])
+
+        return Article.objects.filter(q_expr).order_by('-published_by')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['request'] = self.request
+        context['current_page'] = 4
+        return context
+
 
 class NewsRoomDetailView(DetailView):
     model = Article
-    template_name = ''
+    template_name = 'news-article.html'
     context_object_name = 'article'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_page'] = 4
+        return context

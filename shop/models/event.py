@@ -36,3 +36,6 @@ class Event(models.Model):
             return u'<a href="%s">%s</a>' % (url, str(self.event_name) + ' - end')
         else:
             return u'<a href="%s">%s</a>' % (url, str(self.event_name) + ' - start')
+
+    def get_duration_str(self):
+        return f'{self.event_start.strftime("%d.%b")}-{self.event_end.strftime("%d.%b")}'
