@@ -9,7 +9,7 @@
             <img src="{% static 'img/about-1.jpg' %}" alt="" />
         </div>
         <div class="about-wrapper">
-            <h2>Who We Are?</h2>
+            <h1>Who We Are?</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis urna at lacus eleifend eleifend a eget libero. Nunc porttitor lorem eget enim finibus consequat. Donec a cursus augue. Donec eleifend sapien risus, eu venenatis ex faucibus id. In rhoncus at massa in vulputate. Mauris eu suscipit ante. Proin nec diam in mi varius sagittis non at tortor. Donec euismod tincidunt sem eget semper. Nunc non dolor eget orci tempus molestie nec eget odio.
                 <br>
@@ -17,7 +17,7 @@
             </p>
         </div>
         <div class="about-wrapper">
-            <h2>Our Brand</h2>
+            <h1>Our Brand</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis urna at lacus eleifend eleifend a eget libero. Nunc porttitor lorem eget enim finibus consequat. Donec a cursus augue. Donec eleifend sapien risus, eu venenatis ex faucibus id. In rhoncus at massa in vulputate. Mauris eu suscipit ante. Proin nec diam in mi varius sagittis non at tortor. Donec euismod tincidunt sem eget semper. Nunc non dolor eget orci tempus molestie nec eget odio.
                 <br>
@@ -25,7 +25,7 @@
             </p>
         </div>
         <div class="about-wrapper">
-            <h2>Our Goal</h2>
+            <h1>Our Goal</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis urna at lacus eleifend eleifend a eget libero. Nunc porttitor lorem eget enim finibus consequat. Donec a cursus augue. Donec eleifend sapien risus, eu venenatis ex faucibus id. In rhoncus at massa in vulputate. Mauris eu suscipit ante. Proin nec diam in mi varius sagittis non at tortor. Donec euismod tincidunt sem eget semper. Nunc non dolor eget orci tempus molestie nec eget odio.
                 <br>
@@ -34,19 +34,19 @@
         </div>
         <br><br><hr><br><br>
         <div class="about-wrapper">
-            <h2>Contact Us</h2>
+            <h1>Contact Us</h1>
             <div class="about-contact">
-                <div class="about-cntact-left">
+                <div class="about-contact-left">
                     <h4>Location</h4>
-                    <p>1 Woodlands Square Singapore 738099</p>
+                    <h5>1 Woodlands Square Singapore 738099</h5>
                 </div>
-                <div class="about-cntact-center">
+                <div class="about-contact-center">
                     <h4>Call</h4>
-                    <p>(65) 6894 2237<br>(65) 6894 2238</p>
+                    <h5>(65) 6894 2237<br>(65) 6894 2238</h5>
                 </div>
-                <div class="about-cntact-right">
+                <div class="about-contact-right">
                     <h4>Open-Close</h4>
-                    <p>Weekday 10.30am to 10.30pm<br>Weekend 09.30am to 11.00pm</p>
+                    <h5>M-F 10.30am to 10.30pm<br>S-S 09.30am to 11.00pm</h5>
                 </div>
             </div>
             <p><br>
@@ -56,24 +56,26 @@
                 Parents rooms are located at every level (next to the toilets).<br><br>
                 Shoppers can enjoy free Wi-Fi access with Wireless SG.
             </p>
-            <br><br>
-            <h4>Customer Service, Level 2</h4>
+            <!-- <br><br> -->
+        </div>
+        <div class="about-wrapper">
+            <h3>Customer Service, Level 2</h3>
             <p>
                 &nbsp; - Operating Hours: 10am to 10pm<br>
                 &nbsp; - Redemption Hours: 10.30am to 9.30pm
             </p>
-            <h4>Nursing Rooms</h4>
+            <h3>Nursing Rooms</h3>
             <p>
                 &nbsp; - Level 1 to 5 and Level 7
             </p>
-            <h4>Other Services & Facilities</h4>
+            <h3>Other Services & Facilities</h3>
             <p>
                 Available ATMs:<br>
                 &nbsp; - Basement 1 – POSB / AXS<br>
                 &nbsp; - Level 1 – OCBC<br>
                 &nbsp; - Level 2 – Citibank / Maybank
             </p>
-            <h4>Parking</h4>
+            <h3>Parking</h3>
             <p>
                 Carpark Operating Hours:<br>
                 &nbsp; - Weekdays: 7am to 10:30pm<br>
@@ -86,7 +88,7 @@
                 &nbsp; - Parking for motorcycles at $0.80 per entry.
             </p>
             <button>
-                <a href="./contact.html">Let's contact us!</a>
+                <a href="{% url 'shop:contact' %}">Let's contact us!</a>
             </button>
         </div>
     </div>
