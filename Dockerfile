@@ -20,12 +20,13 @@ ENV DJANGO_SUPERUSER_PASSWORD lecturer
 ENV DJANGO_SUPERUSER_EMAIL lecturer@example.com
 ENV DJANGO_SUPERUSER_USERNAME lecturer
 
+RUN python manage.py loaddata ./initial_backup_data.json
+RUN python manage.py loaddata ./init.json
+
 RUN python manage.py createsuperuser \
     --noinput \
     --username $DJANGO_SUPERUSER_USERNAME \
     --email $DJANGO_SUPERUSER_EMAIL
-
-RUN python manage.py loaddata ./initial_backup_data.json
 
 EXPOSE 8000
 

@@ -11,7 +11,7 @@
             </div>
             <h1>{{ deal.title }}</h1><br><br>
             <h4>{{ deal.event.get_duration_str }}</h4><br>
-            <h5>{{ deal.related_store_id.name }}</h5>
+            <h5><a href="{% url 'shop:store-detail' deal.related_store_id.pk %}">{{ deal.related_store_id.name }}</a></h5>
         </div>
         <div class="events_article-img">
             <img src="{{ deal.poster.url }}" alt="poster image" />

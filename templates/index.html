@@ -9,7 +9,7 @@
         <div class="index-single-text">
             <h2>Events</h2>
             <p>Lorem ipsum dolor sit amet</p>
-            <a href="./events-article.html" class="button">Read More ></a>
+            <a href="{% url 'shop:news-detail' 2 %}" class="button">Read More ></a>
         </div>
     </div>
     <div class="index-single">
@@ -17,7 +17,7 @@
         <div class="index-single-text">
             <h2>Events</h2>
             <p>Lorem ipsum dolor sit amet</p>
-            <a href="./events-article.html" class="button">Read More ></a>
+            <a href="{% url 'shop:deal-detail' 1 %}" class="button">Read More ></a>
         </div>
     </div>
     <div class="index-single">
@@ -25,7 +25,7 @@
         <div class="index-single-text">
             <h2>Events</h2>
             <p>Lorem ipsum dolor sit amet</p>
-            <a href="./events-article.html" class="button">Read More ></a>
+            <a href="{% url 'shop:deal-detail' 2 %}" class="button">Read More ></a>
         </div>
     </div>
     <div class="index-double">
@@ -34,7 +34,7 @@
             <div class="index-left-text">
                 <h2>Events2</h2>
                 <p>Lorem ipsum dolor sit amet</p>
-                <a href="./events-article.html" class="button">Read More ></a>
+                <a href="{% url 'shop:news-detail' 2 %}" class="button">Read More ></a>
             </div>
         </div>
         <div class="index-right">
@@ -42,7 +42,7 @@
             <div class="index-right-text">
                 <h2>Events3</h2>
                 <p>Lorem ipsum dolor sit amet</p>
-                <a href="./events-article.html" class="button">Read More ></a>
+                <a href="{% url 'shop:news-detail' 1 %}" class="button">Read More ></a>
             </div>
         </div>
     </div>

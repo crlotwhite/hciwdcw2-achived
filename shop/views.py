@@ -59,6 +59,29 @@ def contact_view(request):
         template render
 
     """
+    from django.core.mail import send_mail
+
+    if request.method == 'POST':
+        fname = request.POST['firstname']
+        lname = request.POST['lastname']
+        email = request.POST['email']
+        country = request.POST['country']
+        subject = request.POST['subject']
+
+        send_mail(
+            subject=f'contact from {fname} {lname}',
+            message='''first name: {}\nlast name: {}\ncountry: {}\nemail: {}\nsubject:\n{}\n'''.format(
+                fname,
+                lname,
+                country,
+                email,
+                subject,
+            ),
+            from_email='dudnspa0203@naver.com',
+            recipient_list=['dudnspa0203@naver.com'],
+            fail_silently=False
+        )
+
     return render(request, template_name='contact.html', context={'current_page': 5})
 
 

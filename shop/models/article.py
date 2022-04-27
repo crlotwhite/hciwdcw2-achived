@@ -55,3 +55,6 @@ class Article(models.Model):
 
     def get_format_datetime(self):
         return self.published_by.strftime('%d.%b.%Y')
+
+    def __str__(self):
+        return self.title

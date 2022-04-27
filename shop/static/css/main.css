@@ -666,6 +666,7 @@ section {
 	transition: 0.2s;
 }
 .contact input[type=text],
+.contact input[type=email],
 .contact select,
 .contact textarea {
 	width: 100%;
@@ -676,6 +677,7 @@ section {
 	margin: 2px 0 10px;
 	resize: vertical
 }
+
 .contact input[type=submit] {
 	padding: 12px 20px;
 	border: none;
