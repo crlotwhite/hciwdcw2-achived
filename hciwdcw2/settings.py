@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from os import path
 from pathlib import Path
 
+import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'hciwdcw2.urls'
@@ -143,3 +146,6 @@ EMAIL_PORT = 465
 EMAIL_HOST_USER = 'dudnspa0203@naver.com'
 EMAIL_HOST_PASSWORD = 'Znfhspzh0236-'
 EMAIL_USE_SSL = True
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
