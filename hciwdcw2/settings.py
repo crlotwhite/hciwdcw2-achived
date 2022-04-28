@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2fy1*4^w&0h%a^id96pe6%!j)@&gk(0%7**d#^8tb-++(fro7q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -141,5 +141,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.naver.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'dudnspa0203@naver.com'
-EMAIL_HOST_PASSWORD = 'doffltm0203'
+EMAIL_HOST_PASSWORD = 'Znfhspzh0236-'
 EMAIL_USE_SSL = True

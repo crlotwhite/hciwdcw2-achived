@@ -17,7 +17,7 @@ def page_not_found_view(request, exception):
 
 
 def test(request):
-    return render(request, template_name='coming-soon.html', status=404)
+    return render(request, template_name='404.html', status=404)
 
 
 def index(request):
