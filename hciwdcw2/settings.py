@@ -139,13 +139,5 @@ CKEDITOR_UPLOAD_PATH = 'img/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 
-# email settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.naver.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'dudnspa0203@naver.com'
-EMAIL_HOST_PASSWORD = 'Znfhspzh0236-'
-EMAIL_USE_SSL = True
-
 # Activate Django-Heroku.
 django_heroku.settings(locals())
